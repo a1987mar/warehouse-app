@@ -242,7 +242,7 @@ class _WarehouseScreenState extends State<WarehouseScreen> {
   Widget buildCell(WarehouseCell cell) {
   return Container(
     width: 150,
-    height: 60,
+    height: 40,
     margin: const EdgeInsets.all(3),
     padding: const EdgeInsets.all(6),
     decoration: BoxDecoration(
@@ -251,63 +251,76 @@ class _WarehouseScreenState extends State<WarehouseScreen> {
           : (cell.hasItems ? Colors.red : Colors.green),
       borderRadius: BorderRadius.circular(6),
     ),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween, // 🔥 FIX
-      children: [
-        Text(
-          cell.cellCode,
-          style: const TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-
-        Expanded(
-          child: Container(
-            margin: const EdgeInsets.symmetric(vertical: 2),
-            child: cell.subCells.isEmpty
-                ? const SizedBox()
-                : ListView.builder(
-                    itemCount: cell.subCells.length,
-                    shrinkWrap: true,
-                    physics: const ClampingScrollPhysics(),
-                    itemBuilder: (context, i) {
-                      final s = cell.subCells[i];
-
-                      return Text(
-                        "${s.id} ${s.volume.toStringAsFixed(2)}",
-                        style: const TextStyle(
-                          fontSize: 8,
-                          color: Colors.white,
+    child: InkWell( 
+      onTap: () {
+        print("Hello");
+      },
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center, // 🔥 FIX
+        children: [
+          Row(
+            mainAxisAlignment: .spaceAround,
+            children: [
+              Text(
+                cell.cellCode,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+                    
+              Expanded(
+                child: Container(
+                  margin: const EdgeInsets.symmetric(vertical: 2),
+                  child: cell.subCells.isEmpty
+                      ? const SizedBox()
+                      : ListView.builder(
+                          itemCount: cell.subCells.length,
+                          shrinkWrap: true,
+                          physics: const ClampingScrollPhysics(),
+                          itemBuilder: (context, i) {
+                            final s = cell.subCells[i];
+              
+                            return Text(
+                              "${s.id} ${s.volume.toStringAsFixed(2)}",
+                              style: const TextStyle(
+                                fontSize: 8,
+                                color: Colors.white,
+                              ),
+                            );
+                          },
                         ),
-                      );
-                    },
+                ),
+              ),
+                    
+                    
+              Text(
+                "${cell.usedCapacity.toStringAsFixed(2)}/${cell.maxCapacity.toStringAsFixed(2)}",
+                style: const TextStyle(color: Colors.white, fontSize: 10),
+              ),
+               GestureDetector(
+                    onTap: () => removeSub(cell),
+                    child: const Icon(Icons.delete, size: 16, color: Colors.white),
                   ),
+            ],
           ),
-        ),
-
-
-        Text(
-          "${cell.usedCapacity.toStringAsFixed(2)}/${cell.maxCapacity.toStringAsFixed(2)}",
-          style: const TextStyle(color: Colors.white, fontSize: 10),
-        ),
-
-     
-        // Row(
-        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //   children: [
-
-        //     GestureDetector(
-        //       onTap: () => addSub(cell),
-        //       child: const Icon(Icons.add, size: 16, color: Colors.white),
-        //     ),
-        //     GestureDetector(
-        //       onTap: () => removeSub(cell),
-        //       child: const Icon(Icons.delete, size: 16, color: Colors.white),
-        //     ),
-        //   ],
-        // ),
-      ],
+       
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //   children: [
+      
+          //     GestureDetector(
+          //       onTap: () => addSub(cell),
+          //       child: const Icon(Icons.add, size: 16, color: Colors.white),
+          //     ),
+          //     GestureDetector(
+          //       onTap: () => removeSub(cell),
+          //       child: const Icon(Icons.delete, size: 16, color: Colors.white),
+          //     ),
+          //   ],
+          // ),
+        ],
+      ),
     ),
   );
 }
