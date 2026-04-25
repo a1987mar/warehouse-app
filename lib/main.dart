@@ -241,8 +241,8 @@ class _WarehouseScreenState extends State<WarehouseScreen> {
 
   Widget buildCell(WarehouseCell cell) {
   return Container(
-    width: 180,
-    height: 120,
+    width: 150,
+    height: 60,
     margin: const EdgeInsets.all(3),
     padding: const EdgeInsets.all(6),
     decoration: BoxDecoration(
@@ -292,20 +292,21 @@ class _WarehouseScreenState extends State<WarehouseScreen> {
           style: const TextStyle(color: Colors.white, fontSize: 10),
         ),
 
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+     
+        // Row(
+        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //   children: [
 
-            GestureDetector(
-              onTap: () => addSub(cell),
-              child: const Icon(Icons.add, size: 16, color: Colors.white),
-            ),
-            GestureDetector(
-              onTap: () => removeSub(cell),
-              child: const Icon(Icons.delete, size: 16, color: Colors.white),
-            ),
-          ],
-        ),
+        //     GestureDetector(
+        //       onTap: () => addSub(cell),
+        //       child: const Icon(Icons.add, size: 16, color: Colors.white),
+        //     ),
+        //     GestureDetector(
+        //       onTap: () => removeSub(cell),
+        //       child: const Icon(Icons.delete, size: 16, color: Colors.white),
+        //     ),
+        //   ],
+        // ),
       ],
     ),
   );
