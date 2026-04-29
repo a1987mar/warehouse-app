@@ -39719,7 +39719,7 @@ break}p=4
 m=A.an7(null)
 k=t.z
 s=7
-return A.T(m.VC("http://my-cell-serv.onrender.com/log",A.aw(["user",a,"pass",b],t.N,k),k),$async$tm)
+return A.T(m.VC("https://my-cell-serv.onrender.com/log",A.aw(["user",a,"pass",b],t.N,k),k),$async$tm)
 case 7:l=d
 if(l.c!==200){q=!1
 s=1
@@ -39749,7 +39749,7 @@ var $async$tl=A.P(function(a,b){if(a===1){o.push(b)
 s=p}for(;;)switch(s){case 0:B.b.V(n.as)
 p=4
 m=A.an7(null)
-l="http://my-cell-serv.onrender.com/cell"
+l="https://my-cell-serv.onrender.com/cell"
 h=t.N
 g=t.z
 s=7
@@ -39805,7 +39805,7 @@ j=A.W(h).i("a3<1,aS<n,@>>")
 h=A.a_(new A.a3(h,new A.akp(),j),j.i("ae.E"))
 j=t.z
 s=7
-return A.T(l.z5("http://my-cell-serv.onrender.com/cell/save_c",null,h,null,null,A.ar7("POST",A.anT(A.aw(["Authorization","Bearer "+A.j(n.y)],t.N,j))),null,j),$async$zr)
+return A.T(l.z5("https://my-cell-serv.onrender.com/cell/save_c",null,h,null,null,A.ar7("POST",A.anT(A.aw(["Authorization","Bearer "+A.j(n.y)],t.N,j))),null,j),$async$zr)
 case 7:n.c.af(t.Pu).f.ut(B.MW)
 p=2
 s=6
