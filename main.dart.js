@@ -39786,7 +39786,7 @@ var $async$pk=A.O(function(a,b){if(a===1){o.push(b)
 s=p}for(;;)switch(s){case 0:B.b.V(n.as)
 p=4
 m=A.GL(null)
-l="http://localhost:8080/cell"
+l="https://my-cell-serv.onrender.com/cell"
 g=t.N
 f=t.z
 s=7
