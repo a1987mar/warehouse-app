@@ -39716,7 +39716,7 @@ a_P(a){var s=0,r=A.N(t.y),q,p=2,o=[],n=this,m,l,k,j,i,h,g,f
 var $async$uG=A.O(function(b,c){if(b===1){o.push(c)
 s=p}for(;;)switch(s){case 0:p=4
 m=A.GL(null)
-l="https://my-cell-serv.onrender.com/cell"
+l="https://my-cell-serv.onrender.com/cell/del"
 j=t.N
 i=t.z
 h=A.as(["name",a],j,i)
